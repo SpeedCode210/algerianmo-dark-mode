@@ -5,7 +5,7 @@
 // @include     http://algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     1.0
+// @version     1.1
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -16,10 +16,13 @@ document.getElementsByTagName('head')[0].innerHTML += `
 .table-danger, .table-danger>td, .table-danger>th {
     background-color: #9f2c38;
 }
-  
+
 .table-success, .table-success>td, .table-success>th {
     background-color: #328b46;
 }
+  .img-fluid{
+    filter: brightness(0) invert(1);
+  }
 </style>
 `
 const oldColorNormalized = '#9ff99c';
@@ -30,7 +33,7 @@ let cards = document.getElementsByTagName("div");
 for(let i = 0; i < cards.length; i++){
   let bg = window.getComputedStyle(cards[i] ,null).getPropertyValue('background-color');
   if(bg == "rgb(159, 249, 156)"){
-    cards[i].style.backgroundColor = 'rgb(6 38 31)';
+    cards[i].style.backgroundColor = 'rgb(7, 38, 15)';
   }
   else if(bg == "rgb(248, 255, 178)"){
     cards[i].style.backgroundColor = 'rgb(6 6 6)';
@@ -57,3 +60,6 @@ for(let i = 0; i < cards.length; i++){
     cards[i].style.backgroundColor = 'rgb(56 10 15)';
   }
 }
+
+document.getElementsByTagName("nav")[0].style = 'background-color:#02021a!important';
+
