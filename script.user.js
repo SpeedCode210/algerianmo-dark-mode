@@ -5,7 +5,7 @@
 // @include     http://algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     1.1
+// @version     1.2
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -14,52 +14,76 @@ document.getElementsByTagName('head')[0].innerHTML += `
 <style>
   .math-output { background-color: #343434; }
 .table-danger, .table-danger>td, .table-danger>th {
-    background-color: #9f2c38;
+    background-color: #631C1C;
+    color: white;
 }
 
 .table-success, .table-success>td, .table-success>th {
-    background-color: #328b46;
+    background-color: #3A7722;
+    color: white;
 }
   .img-fluid{
     filter: brightness(0) invert(1);
   }
+  body{
+    background-color: #1C1D21;
+  }
+  .force-black{
+    color : black!important;
+  }
+  .force-black > h3 > a, .force-black > a{
+    color: black!important;
+  }
+
+  .force-white{
+    color : white!important;
+  }
+  .force-white > h3 > a, .force-white > a{
+    color: white!important;
+  }
 </style>
 `
-const oldColorNormalized = '#9ff99c';
-const newColor = '#063804';
 
 let cards = document.getElementsByTagName("div");
 
 for(let i = 0; i < cards.length; i++){
   let bg = window.getComputedStyle(cards[i] ,null).getPropertyValue('background-color');
-  if(bg == "rgb(159, 249, 156)"){
-    cards[i].style.backgroundColor = 'rgb(7, 38, 15)';
+  if(bg == "rgb(159, 249, 156)"){ //head-green
+    cards[i].style.backgroundColor = '#274F17';
+    cards[i].classList.add("force-white");
   }
-  else if(bg == "rgb(248, 255, 178)"){
-    cards[i].style.backgroundColor = 'rgb(6 6 6)';
+  else if(bg == "rgb(248, 255, 178)"){ //head-black
+    cards[i].style.backgroundColor = '#3B3947';
+    cards[i].classList.add("force-white");
   }
-  else if(bg == "rgb(188, 255, 186)"){
-    cards[i].style.backgroundColor = 'rgb(7 38 24)';
+  else if(bg == "rgb(188, 255, 186)"){ //body-green
+    cards[i].style.backgroundColor = '#3A7722';
+    cards[i].classList.add("force-white");
   }
-  else if(bg == "rgb(6, 38, 31)"){
+  else if(bg == "rgb(6, 38, 31)"){ // ??
     cards[i].style.backgroundColor = 'rgb(34 34 34)';
   }
-  else if(bg == "rgb(254, 255, 186)"){
-    cards[i].style.backgroundColor = 'rgb(38 38 38)';
+  else if(bg == "rgb(254, 255, 186)"){ //body-black
+    cards[i].style.backgroundColor = '#312F37';
+    cards[i].classList.add("force-white");
   }
-  else if(bg == "rgb(255, 228, 105)" || bg == "rgb(253, 255, 163)"){
-    cards[i].style.backgroundColor = 'rgb(96 63 1)';
+  else if(bg == "rgb(255, 228, 105)" || bg == "rgb(253, 255, 163)"){ //head-yellow
+    cards[i].style.backgroundColor = '#F3A60C';
+    cards[i].classList.add("force-black");
   }
-  else if(bg == "rgb(255, 245, 123)"){
-    cards[i].style.backgroundColor = 'rgb(106 99 13)';
+  else if(bg == "rgb(255, 245, 123)"){ //body-yellow
+    cards[i].style.backgroundColor = '#F4BA24';
+    cards[i].classList.add("force-black");
   }
-  else if(bg == "rgb(237, 150, 158)"){
-    cards[i].style.backgroundColor = 'rgb(86 0 0)';
+  else if(bg == "rgb(237, 150, 158)"){ //head-red
+    cards[i].style.backgroundColor = '#631C1C';
+    cards[i].classList.add("force-white");
   }
-  else if(bg == "rgb(245, 198, 203)"){
-    cards[i].style.backgroundColor = 'rgb(56 10 15)';
+  else if(bg == "rgb(245, 198, 203)"){ //body-red
+    cards[i].style.backgroundColor = '#772222';
+    cards[i].classList.add("force-white");
   }
 }
 
-document.getElementsByTagName("nav")[0].style = 'background-color:#02021a!important';
+document.getElementsByTagName("nav")[0].style = 'background-color:#105636!important';
 
