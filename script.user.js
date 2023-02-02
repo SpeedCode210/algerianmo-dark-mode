@@ -5,7 +5,7 @@
 // @include     http://algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     1.2.1
+// @version     1.2.2
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -23,7 +23,11 @@ document.getElementsByTagName('head')[0].innerHTML += `
     background-color: #3A7722;
     color: white;
 }
-  .img-fluid{
+  .table-warning, .table-warning>td, .table-warning>th {
+    background-color: #F4BA24;
+    color: black;
+}
+  .logo-amo{
     filter: brightness(0) invert(1);
   }
   body{
@@ -138,5 +142,9 @@ for(let i = 0; i < cards.length; i++){
 }
 
 document.getElementsByTagName("nav")[0].style = 'background-color:#105636!important';
-
+let imgs = document.getElementsByTagName("img");
+for(let i =0; i < imgs.length; i++){
+  if(imgs[i].src.includes("/static/images/logo.png"))
+    imgs[i].classList.add("logo-amo");
+}
 
