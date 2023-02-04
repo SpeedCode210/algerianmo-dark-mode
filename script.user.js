@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     1.2.3
+// @version     1.2.4
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -46,56 +46,6 @@ document.getElementsByTagName('head')[0].innerHTML += `
     color: white!important;
   }
 
-
-
-
-  element {
-}
-textarea.form-control {
-  height: 220px;
-}
-textarea.form-control {
-  height: auto;
-}
-.mb-4, .my-4 {
-  margin-bottom: 1.5rem !important;
-}
-.mt-4, .my-4 {
-  margin-top: 1.5rem !important;
-}
-.form-control {
-  display: block;
-  width: 100%;
-  height: calc(1.5em + .75rem + 2px);
-  padding: .375rem .75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: .25rem;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-textarea {
-  overflow: auto;
-  resize: vertical;
-}
-button, input, optgroup, select, textarea {
-  margin: 0;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-* {
-  text-align: right;
-}
-*, ::after, ::before {
-  box-sizing: border-box;
-}
 </style>
 `
 
@@ -123,11 +73,11 @@ for(let i = 0; i < cards.length; i++){
     cards[i].classList.add("force-white");
   }
   else if(bg == "rgb(255, 228, 105)" || bg == "rgb(253, 255, 163)"){ //head-yellow
-    cards[i].style.backgroundColor = '#F3A60C';
+    cards[i].style.backgroundColor = '#BB5D25';
     cards[i].classList.add("force-black");
   }
   else if(bg == "rgb(255, 245, 123)"){ //body-yellow
-    cards[i].style.backgroundColor = '#F4BA24';
+    cards[i].style.backgroundColor = '#E38725';
     cards[i].classList.add("force-black");
   }
   else if(bg == "rgb(237, 150, 158)"){ //head-red
