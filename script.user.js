@@ -4,10 +4,12 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     1.3.3
+// @version     1.4
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
+
+let now = new Date();
 
 document.getElementsByTagName('head')[0].innerHTML += `
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/bootstrap-dark.min.css" title="BoostrapDark"/>
@@ -53,16 +55,23 @@ document.getElementsByTagName('head')[0].innerHTML += `
   .dark .green-nav{
     background-color:#105636!important;
   }
+` + ((now.getMonth() == (4) - 1 && now.getDate() == (1))?`
+  .dark .head-red  { background-color : #274F17 !important; }
+  .dark .body-red  { background-color : #3A7722 !important; }
+  .dark .head-green    { background-color : #631C1C !important; }
+  .dark .body-green    { background-color : #772222 !important; }
 
+`:`
   .dark .head-green  { background-color : #274F17 !important; }
-  .dark .head-black  { background-color : #3B3947 !important; }
   .dark .body-green  { background-color : #3A7722 !important; }
+  .dark .head-red    { background-color : #631C1C !important; }
+  .dark .body-red    { background-color : #772222 !important; }
+`) + `
+  .dark .head-black  { background-color : #3B3947 !important; }
   .dark .unknown     { background-color : rgb(34 34 34) !important; }
   .dark .body-black  { background-color : #312F37 !important; }
   .dark .head-yellow { background-color : #BB5D25 !important; }
   .dark .body-yellow { background-color : #E38725 !important; }
-  .dark .head-red    { background-color : #631C1C !important; }
-  .dark .body-red    { background-color : #772222 !important; }
 </style>
 `
 
