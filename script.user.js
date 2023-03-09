@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     1.4
+// @version     1.5
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -48,7 +48,7 @@ document.getElementsByTagName('head')[0].innerHTML += `
     color: white!important;
   }
 
-  .dark .solution-card img {
+  .dark .solution-card-dark img {
   filter: invert() contrast(1.5);
   }
 
@@ -127,10 +127,29 @@ for(let i =0; i < imgs.length; i++){
 }
 let nav = document.getElementsByClassName("navbar-nav")[0];
 nav.innerHTML = nav.innerHTML +
-  '<button type="button" id="switch-dark" class="btn btn-dark">Dark Mode Toggle</button>';
+  '<button type="button" id="switch-dark" class="btn btn-dark">DMT</button>';
+nav.innerHTML = nav.innerHTML +
+  '<button type="button" id="switch-img-dark" style="margin: 0 5px;" class="btn btn-dark">DIT</button>';
+
+let darkSwitch = ()=>{
+  let cards = document.getElementsByClassName("solution-card");
+  for(let i = 0; i < cards.length; i++){
+    if(cards[i].classList.contains("solution-card-dark")){
+      cards[i].classList.remove("solution-card-dark");
+    }else{
+      cards[i].classList.add("solution-card-dark");
+    }
+  }
+}
+
+darkSwitch();
+
+document.getElementById("switch-img-dark").addEventListener("click", darkSwitch);
+
 
 var boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s=>s.title == "BoostrapDark")[0];
 document.getElementById("switch-dark").addEventListener("click", ()=>{
+  boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s=>s.title == "BoostrapDark")[0];
   boostrapDarkStylesheet.disabled = !boostrapDarkStylesheet.disabled;
   localStorage["dark"] = localStorage["dark"] == "TRUE" ? "FALSE" : "TRUE";
   if(localStorage["dark"] == "TRUE"){
