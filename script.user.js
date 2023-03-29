@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     1.6
+// @version     1.6.1
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -17,7 +17,7 @@ document.getElementsByTagName('head')[0].innerHTML += document.getElementsByTagN
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/bootstrap-dark.min.css" title="BoostrapDark"/>
 <style>
 body{
-padding-bottom: 70px;
+padding-bottom: 150px;
 }
 
 #switch-dark{
@@ -237,9 +237,3 @@ else{
 let boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s=>s.title == "BoostrapDark")[0];
 boostrapDarkStylesheet.disabled = localStorage.dark != "TRUE";
 });
-
-
-
-
-
-
