@@ -4,16 +4,69 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     1.5
+// @version     1.6
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
 
+
+
 let now = new Date();
 
-document.getElementsByTagName('head')[0].innerHTML += `
+document.getElementsByTagName('head')[0].innerHTML += document.getElementsByTagName('head')[0].innerHTML.replace('<!-- MathJax-->', `
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/bootstrap-dark.min.css" title="BoostrapDark"/>
 <style>
+body{
+padding-bottom: 70px;
+}
+
+#switch-dark{
+position: fixed;
+bottom: 20px;
+right:20px;
+background-color: transparent;
+border: none;
+height: 50px;
+width: 50px;
+}
+#switch-dark img{
+height: 50px;
+width: 50px;
+border-radius: 100%;
+box-shadow: 0px 0px 7px #16161699;
+}
+#switch-dark:focus{
+ outline:none !important;
+}
+
+.dark #switch-dark img{
+box-shadow: 0px 0px 7px #ffffff99;
+}
+
+.dark #switch-img-dark img{
+box-shadow: 0px 0px 7px #ffffff99;
+}
+
+#switch-img-dark{
+position: fixed;
+bottom: 80px;
+right:20px;
+background-color: transparent;
+border: none;
+height: 50px;
+width: 50px;
+}
+#switch-img-dark img{
+height: 50px;
+width: 50px;
+border-radius: 100%;
+box-shadow: 0px 0px 7px #16161699;
+}
+#switch-img-dark:focus{
+ outline:none !important;
+}
+
+
   .dark .math-output { background-color: #343434; }
 .table-danger, .table-danger>td, .table-danger>th {
     background-color: #631C1C;
@@ -53,7 +106,7 @@ document.getElementsByTagName('head')[0].innerHTML += `
   }
 
   .dark .green-nav{
-    background-color:#105636!important;
+    background-color:#0C3441!important;
   }
 ` + ((now.getMonth() == (4) - 1 && now.getDate() == (1))?`
   .dark .head-red  { background-color : #274F17 !important; }
@@ -73,7 +126,8 @@ document.getElementsByTagName('head')[0].innerHTML += `
   .dark .head-yellow { background-color : #BB5D25 !important; }
   .dark .body-yellow { background-color : #E38725 !important; }
 </style>
-`
+<!-- MathJax-->
+`);
 
 document.getElementsByTagName("nav")[0].classList.add("green-nav");
 
@@ -104,11 +158,11 @@ for(let i = 0; i < cards.length; i++){
   }
   else if(bg == "rgb(255, 228, 105)" || bg == "rgb(253, 255, 163)"){ //head-yellow
     cards[i].classList.add("head-yellow");
-    cards[i].classList.add("force-black");
+    cards[i].classList.add("force-white");
   }
   else if(bg == "rgb(255, 245, 123)"){ //body-yellow
     cards[i].classList.add("body-yellow");
-    cards[i].classList.add("force-black");
+    cards[i].classList.add("force-white");
   }
   else if(bg == "rgb(237, 150, 158)"){ //head-red
     cards[i].classList.add("head-red");
@@ -125,12 +179,14 @@ for(let i =0; i < imgs.length; i++){
   if(imgs[i].src.includes("/static/images/logo.png"))
     imgs[i].classList.add("logo-amo");
 }
-let nav = document.getElementsByClassName("navbar-nav")[0];
-nav.innerHTML = nav.innerHTML +
-  '<button type="button" id="switch-dark" class="btn btn-dark">DMT</button>';
-nav.innerHTML = nav.innerHTML +
-  '<button type="button" id="switch-img-dark" style="margin: 0 5px;" class="btn btn-dark">DIT</button>';
 
+body.innerHTML +=
+  '<button type="button" id="switch-dark"><img src="https://raw.githubusercontent.com/SpeedCode210/algerianmo-dark-mode/main/dark-mode.png"></button>';
+
+if(window.location.href.includes("?sub="))
+{
+body.innerHTML +=
+  '<button type="button" id="switch-img-dark"><img src="https://raw.githubusercontent.com/SpeedCode210/algerianmo-dark-mode/main/brightness-and-contrast.png"></button>';
 let darkSwitch = ()=>{
   let cards = document.getElementsByClassName("solution-card");
   for(let i = 0; i < cards.length; i++){
@@ -146,13 +202,15 @@ darkSwitch();
 
 document.getElementById("switch-img-dark").addEventListener("click", darkSwitch);
 
+}
 
-var boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s=>s.title == "BoostrapDark")[0];
+
+
 document.getElementById("switch-dark").addEventListener("click", ()=>{
-  boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s=>s.title == "BoostrapDark")[0];
+  let boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s=>s.title == "BoostrapDark")[0];
   boostrapDarkStylesheet.disabled = !boostrapDarkStylesheet.disabled;
-  localStorage["dark"] = localStorage["dark"] == "TRUE" ? "FALSE" : "TRUE";
-  if(localStorage["dark"] == "TRUE"){
+  localStorage.dark = localStorage.dark == "TRUE" ? "FALSE" : "TRUE";
+  if(localStorage.dark == "TRUE"){
     body.classList.add("dark");
   }
   else{
@@ -160,14 +218,27 @@ document.getElementById("switch-dark").addEventListener("click", ()=>{
   }
 });
 
-if(!localStorage["dark"]){
-  localStorage["dark"] = "TRUE";
-}
-
-if(localStorage["dark"] == "TRUE"){
+if(localStorage.dark == "TRUE"){
   body.classList.add("dark");
 }
-boostrapDarkStylesheet.disabled = localStorage["dark"] != "TRUE";
+
+
+$(document).ready(function() {
+if(!localStorage.dark){
+  localStorage.dark = "TRUE";
+}
+
+if(localStorage.dark == "TRUE"){
+    body.classList.add("dark");
+}
+else{
+    body.classList.remove("dark");
+}
+let boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s=>s.title == "BoostrapDark")[0];
+boostrapDarkStylesheet.disabled = localStorage.dark != "TRUE";
+});
+
+
 
 
 
