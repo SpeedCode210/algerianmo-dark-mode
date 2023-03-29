@@ -14,3 +14,6 @@ and click on "Confirm installation"
 
 ### Step 3 :
 Enjoy 🎉
+
+### .
+Dark mode icons created by Freepik - Flaticon
