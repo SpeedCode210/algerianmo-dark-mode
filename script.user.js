@@ -183,7 +183,7 @@ for(let i =0; i < imgs.length; i++){
 body.innerHTML +=
   '<button type="button" id="switch-dark"><img src="https://raw.githubusercontent.com/SpeedCode210/algerianmo-dark-mode/main/dark-mode.png"></button>';
 
-if(window.location.href.includes("?sub="))
+if(window.location.href.includes("?sub=") || window.location.href.includes("correction"))
 {
 body.innerHTML +=
   '<button type="button" id="switch-img-dark"><img src="https://raw.githubusercontent.com/SpeedCode210/algerianmo-dark-mode/main/brightness-and-contrast.png"></button>';
