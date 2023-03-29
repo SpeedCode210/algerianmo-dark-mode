@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     1.6.1
+// @version     1.6.2
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -68,16 +68,16 @@ box-shadow: 0px 0px 7px #16161699;
 
 
   .dark .math-output { background-color: #343434; }
-.table-danger, .table-danger>td, .table-danger>th {
+.dark .table-danger,.dark .table-danger>td,.dark .table-danger>th {
     background-color: #631C1C;
     color: white;
 }
 
-.dark .table-success, .table-success>td, .table-success>th {
+.dark .table-success,.dark .table-success>td,.dark .table-success>th {
     background-color: #3A7722;
     color: white;
 }
-  .dark .table-warning, .table-warning>td, .table-warning>th {
+  .dark .table-warning,.dark .table-warning>td,.dark .table-warning>th {
     background-color: #F4BA24;
     color: black;
 }
@@ -90,14 +90,14 @@ box-shadow: 0px 0px 7px #16161699;
   .dark .force-black{
     color : black!important;
   }
-  .dark .force-black > h3 > a, .force-black > a{
+  .dark .force-black > h3 > a,.dark .force-black > a{
     color: black!important;
   }
 
   .dark .force-white{
     color : white!important;
   }
-  .dark .force-white > h3 > a, .force-white > a{
+  .dark .force-white > h3 > a,.dark .force-white > a{
     color: white!important;
   }
 
@@ -237,3 +237,9 @@ else{
 let boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s=>s.title == "BoostrapDark")[0];
 boostrapDarkStylesheet.disabled = localStorage.dark != "TRUE";
 });
+
+
+
+
+
+
