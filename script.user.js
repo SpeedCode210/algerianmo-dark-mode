@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     1.6.2
+// @version     1.6.3
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -13,7 +13,7 @@
 
 let now = new Date();
 
-document.getElementsByTagName('head')[0].innerHTML += document.getElementsByTagName('head')[0].innerHTML.replace('<!-- MathJax-->', `
+document.getElementsByTagName('head')[0].innerHTML = document.getElementsByTagName('head')[0].innerHTML.replace('<!-- MathJax-->', `
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/bootstrap-dark.min.css" title="BoostrapDark"/>
 <style>
 body{
@@ -180,13 +180,14 @@ for(let i =0; i < imgs.length; i++){
     imgs[i].classList.add("logo-amo");
 }
 
-body.innerHTML +=
-  '<button type="button" id="switch-dark"><img src="https://raw.githubusercontent.com/SpeedCode210/algerianmo-dark-mode/main/dark-mode.png"></button>';
+document.getElementsByClassName('container')[0].insertAdjacentHTML('beforebegin',
+    '<button type="button" id="switch-dark"><img src="https://raw.githubusercontent.com/SpeedCode210/algerianmo-dark-mode/main/dark-mode.png"></button>');
+
 
 if(window.location.href.includes("?sub=") || window.location.href.includes("correction"))
 {
-body.innerHTML +=
-  '<button type="button" id="switch-img-dark"><img src="https://raw.githubusercontent.com/SpeedCode210/algerianmo-dark-mode/main/brightness-and-contrast.png"></button>';
+document.getElementsByClassName('container')[0].insertAdjacentHTML('beforebegin',
+  '<button type="button" id="switch-img-dark"><img src="https://raw.githubusercontent.com/SpeedCode210/algerianmo-dark-mode/main/brightness-and-contrast.png"></button>');
 let darkSwitch = ()=>{
   let cards = document.getElementsByClassName("solution-card");
   for(let i = 0; i < cards.length; i++){
