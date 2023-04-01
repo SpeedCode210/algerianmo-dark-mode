@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     1.6.3
+// @version     1.6.4
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -108,7 +108,7 @@ box-shadow: 0px 0px 7px #16161699;
   .dark .green-nav{
     background-color:#0C3441!important;
   }
-` + ((now.getMonth() == (4) - 1 && now.getDate() == (1))?`
+` + ((now.getMonth() == (4) - 1 && now.getDate() == (0))?`
   .dark .head-red  { background-color : #274F17 !important; }
   .dark .body-red  { background-color : #3A7722 !important; }
   .dark .head-green    { background-color : #631C1C !important; }
