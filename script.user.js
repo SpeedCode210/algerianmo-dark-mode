@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     1.6.4
+// @version     2.0
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -13,9 +13,10 @@
 
 let now = new Date();
 
-document.getElementsByTagName('head')[0].innerHTML = document.getElementsByTagName('head')[0].innerHTML.replace('<!-- MathJax-->', `
+document.getElementsByTagName('head')[0].innerHTML = document.getElementsByTagName('head')[0].innerHTML + `
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/bootstrap-dark.min.css" title="BoostrapDark"/>
 <style>
+
 body{
 padding-bottom: 150px;
 }
@@ -38,6 +39,8 @@ box-shadow: 0px 0px 7px #16161699;
 #switch-dark:focus{
  outline:none !important;
 }
+
+.card-text, .card-header h3{ text-align: center;}
 
 .dark #switch-dark img{
 box-shadow: 0px 0px 7px #ffffff99;
@@ -68,16 +71,16 @@ box-shadow: 0px 0px 7px #16161699;
 
 
   .dark .math-output { background-color: #343434; }
-.dark .table-danger,.dark .table-danger>td,.dark .table-danger>th {
+.table-danger,.table-danger>td,.table-danger>th {
     background-color: #631C1C;
     color: white;
 }
 
-.dark .table-success,.dark .table-success>td,.dark .table-success>th {
-    background-color: #3A7722;
+.table-success,.table-success>td,.table-success>th {
+    background-color: #115534;
     color: white;
 }
-  .dark .table-warning,.dark .table-warning>td,.dark .table-warning>th {
+  .table-warning,.table-warning>td,.table-warning>th {
     background-color: #F4BA24;
     color: black;
 }
@@ -87,17 +90,17 @@ box-shadow: 0px 0px 7px #16161699;
   .dark {
     background-color: #1C1D21;
   }
-  .dark .force-black{
+  .force-black{
     color : black!important;
   }
-  .dark .force-black > h3 > a,.dark .force-black > a{
+  .force-black > h3 > a, .force-black > a{
     color: black!important;
   }
 
-  .dark .force-white{
+  .force-white{
     color : white!important;
   }
-  .dark .force-white > h3 > a,.dark .force-white > a{
+  .force-white > h3 > a,.force-white > a,.force-white a{
     color: white!important;
   }
 
@@ -105,29 +108,37 @@ box-shadow: 0px 0px 7px #16161699;
   filter: invert() contrast(1.5);
   }
 
-  .dark .green-nav{
-    background-color:#0C3441!important;
+  .green-nav{
+    background-color:#22773A!important;
   }
-` + ((now.getMonth() == (4) - 1 && now.getDate() == (0))?`
-  .dark .head-red  { background-color : #274F17 !important; }
-  .dark .body-red  { background-color : #3A7722 !important; }
-  .dark .head-green    { background-color : #631C1C !important; }
-  .dark .body-green    { background-color : #772222 !important; }
+  .dark .green-nav{
+    background-color:#115534!important;
+  }
 
-`:`
-  .dark .head-green  { background-color : #274F17 !important; }
-  .dark .body-green  { background-color : #3A7722 !important; }
-  .dark .head-red    { background-color : #631C1C !important; }
-  .dark .body-red    { background-color : #772222 !important; }
-`) + `
-  .dark .head-black  { background-color : #3B3947 !important; }
+  .card{border:0px;  background-color: #0001;  box-shadow: 5px 5px 10px #0006;border-radius: 20px;}
+  .dark .card{border:0px!important;  background-color: #fff1;  box-shadow: 5px 5px 10px #0006;border-radius: 20px;}
+  .card-header{border: 0px;!important;}
+
+  .head-green  { background-color : #22773A !important; border-radius: 15px 15px 0px 0px !important;}
+  .body-green  { background-color : #115534 !important; border: solid 15px #22773A; border-radius: 0px 0px 20px 20px; }
+  .head-red    { background-color : #832929 !important; border-radius: 15px 15px 0px 0px !important;}
+  .body-red    { background-color : #611414 !important; border: solid 15px #832929; border-radius: 0px 0px 20px 20px; }
+
   .dark .unknown     { background-color : rgb(34 34 34) !important; }
-  .dark .body-black  { background-color : #312F37 !important; }
-  .dark .head-yellow { background-color : #BB5D25 !important; }
-  .dark .body-yellow { background-color : #E38725 !important; }
+
+  .head-black  { background-color : #1E7077 !important; border-radius: 15px 15px 0px 0px !important;}
+  .body-black  { background-color : #17494E !important; border: solid 15px #1E7077; border-radius: 0px 0px 20px 20px; }
+  .head-yellow { background-color : #2573BB !important; border-radius: 15px 15px 0px 0px !important;}
+  .body-yellow { background-color : #14458E !important; border: solid 15px #2573BB; border-radius: 0px 0px 20px 20px; }
+
+  @media print{
+    *{color:black!important;}
+    .card-body, .card-header{border: 2px solid #000!important;}
+    h3, a{color:black!important;}
+  }
 </style>
 <!-- MathJax-->
-`);
+`;
 
 document.getElementsByTagName("nav")[0].classList.add("green-nav");
 
