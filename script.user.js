@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     2.0
+// @version     2.1
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -105,31 +105,40 @@ box-shadow: 0px 0px 7px #16161699;
   }
 
   .dark .solution-card-dark img {
-  filter: invert() contrast(1.5);
+  filter: invert() contrast(2.5);
   }
 
   .green-nav{
     background-color:#22773A!important;
   }
   .dark .green-nav{
-    background-color:#115534!important;
+    background-color:#03360f !important;
   }
 
   .card{border:0px;  background-color: #0001;  box-shadow: 5px 5px 10px #0006;border-radius: 20px;}
-  .dark .card{border:0px!important;  background-color: #fff1;  box-shadow: 5px 5px 10px #0006;border-radius: 20px;}
+  .dark .card{border:0px!important;  background-color: #fff1;  box-shadow: 5px 5px 10px #0006;border-radius: 50px 50px 50px 50px;}
   .card-header{border: 0px;!important;}
 
-  .head-green  { background-color : #22773A !important; border-radius: 15px 15px 0px 0px !important;}
-  .body-green  { background-color : #115534 !important; border: solid 15px #22773A; border-radius: 0px 0px 20px 20px; }
-  .head-red    { background-color : #832929 !important; border-radius: 15px 15px 0px 0px !important;}
-  .body-red    { background-color : #611414 !important; border: solid 15px #832929; border-radius: 0px 0px 20px 20px; }
+  .head-green  { background-color : #22773A !important; border-radius: 50px 50px 0px 0px !important;}
+  .body-green  { background-color : #03360f !important; border: solid 15px #22773A; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
+  .head-red    { background-color : #f50707 !important; border-radius: 50px 50px 0px 0px !important;}
+  .body-red    { background-color : #611414 !important; border: solid 15px #832929; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
 
-  .dark .unknown     { background-color : rgb(34 34 34) !important; }
+  .dark .unknown     { background-color : rgb(12 12 12) !important; }
 
-  .head-black  { background-color : #1E7077 !important; border-radius: 15px 15px 0px 0px !important;}
-  .body-black  { background-color : #17494E !important; border: solid 15px #1E7077; border-radius: 0px 0px 20px 20px; }
-  .head-yellow { background-color : #2573BB !important; border-radius: 15px 15px 0px 0px !important;}
-  .body-yellow { background-color : #14458E !important; border: solid 15px #2573BB; border-radius: 0px 0px 20px 20px; }
+  .head-black  { background-color : #1E7077 !important; border-radius: 50px 50px 0px 0px !important;}
+  .body-black  { background-color : #17494E !important; border: solid 15px #1E7077; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
+  .head-yellow { background-color : #cc991d !important; border-radius: 50px 50px 0px 0px !important;}
+  .body-yellow { background-color : #8a5506 !important; border: solid 15px #cc991d; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
+
+  img{border-radius: 50px;}
+  tr:last-child td:last-child { border-top-left-radius: 10px; }
+  tr:last-child td:first-child { border-top-right-radius: 10px; }
+
+  tr:first-child td:last-child { border-bottom-left-radius: 10px; }
+  tr:first-child td:first-child { border-bottom-right-radius: 10px; }
+
+  .card-header { text-align:center;}
 
   @media print{
     *{color:black!important;}
@@ -249,9 +258,3 @@ else{
 let boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s=>s.title == "BoostrapDark")[0];
 boostrapDarkStylesheet.disabled = localStorage.dark != "TRUE";
 });
-
-
-
-
-
-
