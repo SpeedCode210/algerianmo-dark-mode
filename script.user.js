@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     2.1
+// @version     2.1.2
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -115,8 +115,8 @@ box-shadow: 0px 0px 7px #16161699;
     background-color:#03360f !important;
   }
 
-  .card{border:0px;  background-color: #0001;  box-shadow: 5px 5px 10px #0006;border-radius: 20px;}
-  .dark .card{border:0px!important;  background-color: #fff1;  box-shadow: 5px 5px 10px #0006;border-radius: 50px 50px 50px 50px;}
+  .card{border:0px;  background-color: #0001;  box-shadow: 5px 5px 10px #0006;border-radius: 50px 50px 50px 50px;}
+  .dark .card{border:0px!important;  background-color: #fff1;  box-shadow: 5px 5px 10px #0006;}
   .card-header{border: 0px;!important;}
 
   .head-green  { background-color : #22773A !important; border-radius: 50px 50px 0px 0px !important;}
@@ -196,8 +196,11 @@ for(let i = 0; i < cards.length; i++){
 
 let imgs = document.getElementsByTagName("img");
 for(let i =0; i < imgs.length; i++){
-  if(imgs[i].src.includes("/static/images/logo.png"))
-    imgs[i].classList.add("logo-amo");
+  if(imgs[i].src.includes("/static/images/logo.png")){
+    // imgs[i].classList.add("logo-amo");
+     imgs[i].src = "https://www.freepnglogos.com/uploads/dragon-png/reddragon-render-magicheetah-deviantart-19.png";
+    imgs[i].style.height='400px';
+  }
 }
 
 document.getElementsByClassName('container')[0].insertAdjacentHTML('beforebegin',
