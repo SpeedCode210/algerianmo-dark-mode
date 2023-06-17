@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     2.1.2
+// @version     2.1.3
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -197,9 +197,9 @@ for(let i = 0; i < cards.length; i++){
 let imgs = document.getElementsByTagName("img");
 for(let i =0; i < imgs.length; i++){
   if(imgs[i].src.includes("/static/images/logo.png")){
-    // imgs[i].classList.add("logo-amo");
-     imgs[i].src = "https://www.freepnglogos.com/uploads/dragon-png/reddragon-render-magicheetah-deviantart-19.png";
-    imgs[i].style.height='400px';
+    imgs[i].classList.add("logo-amo");
+    // imgs[i].src = "https://www.freepnglogos.com/uploads/dragon-png/reddragon-render-magicheetah-deviantart-19.png";
+    // imgs[i].style.height='400px';
   }
 }
 
