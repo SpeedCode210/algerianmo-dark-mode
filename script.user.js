@@ -4,10 +4,19 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     2.1.4
+// @version     2.1.5
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
+
+
+//fixing a bug on unremovable drafts
+if(window.location.href.includes("sub=0")){
+    let as = document.getElementsByTagName("a");
+    for(let a of as)
+        if(a.href.includes("delete"))
+            a.href = a.href.replace("sub=0/delete", "delete");
+}
 
 
 document.getElementsByTagName('head')[0].innerHTML = document.getElementsByTagName('head')[0].innerHTML + `
@@ -194,8 +203,8 @@ for(let i = 0; i < cards.length; i++){
 let imgs = document.getElementsByTagName("img");
 for(let i =0; i < imgs.length; i++){
   if(imgs[i].src.includes("/static/images/logo.png")){
-    imgs[i].classList.add("logo-amo");
- }
+     imgs[i].classList.add("logo-amo");
+  }
 }
 
 if(!window.location.href.includes("admin"))
