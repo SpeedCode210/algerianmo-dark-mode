@@ -4,18 +4,18 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     2.1.5
+// @version     2.1.6
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
 
 
 //fixing a bug on unremovable drafts
-if(window.location.href.includes("sub=0")){
-    let as = document.getElementsByTagName("a");
-    for(let a of as)
-        if(a.href.includes("delete"))
-            a.href = a.href.replace("sub=0/delete", "delete");
+if (window.location.href.includes("sub=0")) {
+  let as = document.getElementsByTagName("a");
+  for (let a of as)
+    if (a.href.includes("delete"))
+      a.href = a.href.replace("sub=0/delete", "delete");
 }
 
 
@@ -25,6 +25,10 @@ document.getElementsByTagName('head')[0].innerHTML = document.getElementsByTagNa
 
 body{
 padding-bottom: 150px;
+}
+
+.card-head, .card-title{
+text-align: center;
 }
 
 #switch-dark{
@@ -43,7 +47,7 @@ border-radius: 100%;
 box-shadow: 0px 0px 7px #16161699;
 }
 #switch-dark:focus{
- outline:none !important;
+outline:none !important;
 }
 
 .card-text, .card-header h3{ text-align: center;}
@@ -72,85 +76,85 @@ border-radius: 100%;
 box-shadow: 0px 0px 7px #16161699;
 }
 #switch-img-dark:focus{
- outline:none !important;
+outline:none !important;
 }
 
 
-  .dark .math-output { background-color: #343434; }
+.dark .math-output { background-color: #343434; }
 .table-danger,.table-danger>td,.table-danger>th {
-    background-color: #631C1C;
-    color: white;
+  background-color: #631C1C;
+  color: white;
 }
 
 .table-success,.table-success>td,.table-success>th {
-    background-color: #115534;
-    color: white;
+  background-color: #115534;
+  color: white;
 }
-  .table-warning,.table-warning>td,.table-warning>th {
-    background-color: #F4BA24;
-    color: black;
+.table-warning,.table-warning>td,.table-warning>th {
+  background-color: #F4BA24;
+  color: black;
 }
-  .dark .logo-amo{
-    filter: brightness(0) invert(1);
-  }
-  .dark {
-    background-color: #1C1D21;
-  }
-  .force-black{
-    color : black!important;
-  }
-  .force-black > h3 > a, .force-black > a{
-    color: black!important;
-  }
+.dark .logo-amo{
+  filter: brightness(0) invert(1);
+}
+.dark {
+  background-color: #1C1D21;
+}
+.force-black{
+  color : black!important;
+}
+.force-black > h3 > a, .force-black > a{
+  color: black!important;
+}
 
-  .force-white{
-    color : white!important;
-  }
-  .force-white > h3 > a,.force-white > a,.force-white a{
-    color: white!important;
-  }
+.force-white{
+  color : white!important;
+}
+.force-white > h3 > a,.force-white > a,.force-white a{
+  color: white!important;
+}
 
-  .dark .solution-card-dark img {
-  filter: invert() contrast(2.5);
-  }
+.dark .solution-card-dark img {
+filter: invert() contrast(2.5);
+}
 
-  .green-nav{
-    background-color:#22773A!important;
-  }
-  .dark .green-nav{
-    background-color:#03360f !important;
-  }
+.green-nav{
+  background-color:#22773A!important;
+}
+.dark .green-nav{
+  background-color:#03360f !important;
+}
 
-  .card{border:0px;  background-color: #0001;  box-shadow: 5px 5px 10px #0006;border-radius: 50px 50px 50px 50px;}
-  .dark .card{border:0px!important;  background-color: #fff1;  box-shadow: 5px 5px 10px #0006;}
-  .card-header{border: 0px;!important;}
+.card{border:0px;  background-color: #0001;  box-shadow: 5px 5px 10px #0006;border-radius: 50px 50px 50px 50px;}
+.dark .card{border:0px!important;  background-color: #fff1;  box-shadow: 5px 5px 10px #0006;}
+.card-header{border: 0px;!important;}
 
-  .head-green  { background-color : #22773A !important; border-radius: 50px 50px 0px 0px !important;}
-  .body-green  { background-color : #03360f !important; border: solid 15px #22773A; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
-  .head-red    { background-color : #f50707 !important; border-radius: 50px 50px 0px 0px !important;}
-  .body-red    { background-color : #611414 !important; border: solid 15px #832929; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
+.head-green  { background-color : #22773A !important; border-radius: 50px 50px 0px 0px !important;}
+.body-green  { background-color : #03360f !important; border: solid 15px #22773A; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
+.head-red    { background-color : #f50707 !important; border-radius: 50px 50px 0px 0px !important;}
+.body-red    { background-color : #611414 !important; border: solid 15px #832929; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
 
-  .dark .unknown     { background-color : rgb(12 12 12) !important; }
+.dark .unknown     { background-color : rgb(12 12 12) !important; }
 
-  .head-black  { background-color : #1E7077 !important; border-radius: 50px 50px 0px 0px !important;}
-  .body-black  { background-color : #17494E !important; border: solid 15px #1E7077; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
-  .head-yellow { background-color : #cc991d !important; border-radius: 50px 50px 0px 0px !important;}
-  .body-yellow { background-color : #8a5506 !important; border: solid 15px #cc991d; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
+.head-black  { background-color : #1E7077 !important; border-radius: 50px 50px 0px 0px !important;}
+.body-black  { background-color : #17494E !important; border: solid 15px #1E7077; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
+.head-yellow { background-color : #cc991d !important; border-radius: 50px 50px 0px 0px !important;}
+.body-yellow { background-color : #8a5506 !important; border: solid 15px #cc991d; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
 
-  img{border-radius: 50px;}
-  tr:last-child td:last-child { border-top-left-radius: 10px; }
-  tr:last-child td:first-child { border-top-right-radius: 10px; }
+img{border-radius: 50px;}
+tr:last-child td:last-child { border-top-left-radius: 10px; }
+tr:last-child td:first-child { border-top-right-radius: 10px; }
 
-  tr:first-child td:last-child { border-bottom-left-radius: 10px; }
-  tr:first-child td:first-child { border-bottom-right-radius: 10px; }
+tr:first-child td:last-child { border-bottom-left-radius: 10px; }
+tr:first-child td:first-child { border-bottom-right-radius: 10px; }
 
-  .card-header { text-align:center;}
+.card-header { text-align:center;}
 
-  @media print{
-    *{color:black!important;}
-    .card-body, .card-header{border: 2px solid #000!important;}
-    h3, a{color:black!important;}
-  }
+@media print{
+  *{color:black!important;}
+  .card-body, .card-header{border: 2px solid #000!important;}
+  h3, a{color:black!important;}
+}
 </style>
 <!-- MathJax-->
 `;
@@ -161,108 +165,107 @@ let body = document.getElementsByTagName("body")[0];
 
 let cards = document.getElementsByTagName("div");
 
-for(let i = 0; i < cards.length; i++){
-  let bg = window.getComputedStyle(cards[i] ,null).getPropertyValue('background-color');
-  if(bg == "rgb(159, 249, 156)"){ //head-green
+for (let i = 0; i < cards.length; i++) {
+  let bg = window.getComputedStyle(cards[i], null).getPropertyValue('background-color');
+  if (bg == "rgb(159, 249, 156)") { //head-green
     cards[i].classList.add("force-white");
     cards[i].classList.add("head-green");
   }
-  else if(bg == "rgb(248, 255, 178)"){ //head-black
+  else if (bg == "rgb(248, 255, 178)") { //head-black
     cards[i].classList.add("force-white");
     cards[i].classList.add("head-black");
   }
-  else if(bg == "rgb(188, 255, 186)"){ //body-green
+  else if (bg == "rgb(188, 255, 186)") { //body-green
     cards[i].classList.add("body-green");
     cards[i].classList.add("force-white");
   }
-  else if(bg == "rgb(6, 38, 31)"){ // ??
+  else if (bg == "rgb(6, 38, 31)") { // ??
     cards[i].classList.add("unknown");
   }
-  else if(bg == "rgb(254, 255, 186)"){ //body-black
+  else if (bg == "rgb(254, 255, 186)") { //body-black
     cards[i].classList.add("body-black");
     cards[i].classList.add("force-white");
   }
-  else if(bg == "rgb(255, 228, 105)" || bg == "rgb(253, 255, 163)"){ //head-yellow
+  else if (bg == "rgb(255, 228, 105)" || bg == "rgb(253, 255, 163)") { //head-yellow
     cards[i].classList.add("head-yellow");
     cards[i].classList.add("force-white");
   }
-  else if(bg == "rgb(255, 245, 123)"){ //body-yellow
+  else if (bg == "rgb(255, 245, 123)") { //body-yellow
     cards[i].classList.add("body-yellow");
     cards[i].classList.add("force-white");
   }
-  else if(bg == "rgb(237, 150, 158)"){ //head-red
+  else if (bg == "rgb(237, 150, 158)") { //head-red
     cards[i].classList.add("head-red");
     cards[i].classList.add("force-white");
   }
-  else if(bg == "rgb(245, 198, 203)"){ //body-red
+  else if (bg == "rgb(245, 198, 203)") { //body-red
     cards[i].classList.add("body-red");
     cards[i].classList.add("force-white");
   }
 }
 
 let imgs = document.getElementsByTagName("img");
-for(let i =0; i < imgs.length; i++){
-  if(imgs[i].src.includes("/static/images/logo.png")){
-     imgs[i].classList.add("logo-amo");
+for (let i = 0; i < imgs.length; i++) {
+  if (imgs[i].src.includes("/static/images/logo.png")) {
+    imgs[i].classList.add("logo-amo");
   }
 }
 
-if(!window.location.href.includes("admin"))
-    document.getElementsByClassName('container')[0].insertAdjacentHTML('beforebegin',
-        '<button type="button" id="switch-dark"><img src="https://raw.githubusercontent.com/SpeedCode210/algerianmo-dark-mode/main/dark-mode.png"></button>');
+if (!window.location.href.includes("admin"))
+  document.getElementsByClassName('container')[0].insertAdjacentHTML('beforebegin',
+    '<button type="button" id="switch-dark"><img src="https://raw.githubusercontent.com/SpeedCode210/algerianmo-dark-mode/main/dark-mode.png"></button>');
 
 
-if(window.location.href.includes("?sub=") || window.location.href.includes("correction"))
-{
-document.getElementsByClassName('container')[0].insertAdjacentHTML('beforebegin',
-  '<button type="button" id="switch-img-dark"><img src="https://raw.githubusercontent.com/SpeedCode210/algerianmo-dark-mode/main/brightness-and-contrast.png"></button>');
-let darkSwitch = ()=>{
-  let cards = document.getElementsByClassName("solution-card");
-  for(let i = 0; i < cards.length; i++){
-    if(cards[i].classList.contains("solution-card-dark")){
-      cards[i].classList.remove("solution-card-dark");
-    }else{
-      cards[i].classList.add("solution-card-dark");
+if (window.location.href.includes("?sub=") || window.location.href.includes("correction")) {
+  document.getElementsByClassName('container')[0].insertAdjacentHTML('beforebegin',
+    '<button type="button" id="switch-img-dark"><img src="https://raw.githubusercontent.com/SpeedCode210/algerianmo-dark-mode/main/brightness-and-contrast.png"></button>');
+  let darkSwitch = () => {
+    let cards = document.getElementsByClassName("solution-card");
+    for (let i = 0; i < cards.length; i++) {
+      if (cards[i].classList.contains("solution-card-dark")) {
+        cards[i].classList.remove("solution-card-dark");
+      } else {
+        cards[i].classList.add("solution-card-dark");
+      }
     }
   }
+
+  darkSwitch();
+
+  document.getElementById("switch-img-dark").addEventListener("click", darkSwitch);
+
 }
 
-darkSwitch();
-
-document.getElementById("switch-img-dark").addEventListener("click", darkSwitch);
-
-}
 
 
-
-document.getElementById("switch-dark").addEventListener("click", ()=>{
-  let boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s=>s.title == "BoostrapDark")[0];
+document.getElementById("switch-dark").addEventListener("click", () => {
+  let boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s => s.title == "BoostrapDark")[0];
   boostrapDarkStylesheet.disabled = !boostrapDarkStylesheet.disabled;
   localStorage.dark = localStorage.dark == "TRUE" ? "FALSE" : "TRUE";
-  if(localStorage.dark == "TRUE"){
+  if (localStorage.dark == "TRUE") {
     body.classList.add("dark");
   }
-  else{
+  else {
     body.classList.remove("dark");
   }
 });
 
-if(localStorage.dark == "TRUE"){
+if (localStorage.dark == "TRUE") {
   body.classList.add("dark");
 }
 
 
-$(document).ready(function() {
-if(!localStorage.dark){
-  localStorage.dark = "TRUE";
-}
+$(document).ready(function () {
+  if (!localStorage.dark) {
+    localStorage.dark = "TRUE";
+  }
 
-if(localStorage.dark == "TRUE"){
+  if (localStorage.dark == "TRUE") {
     body.classList.add("dark");
-}
-else{
+  }
+  else {
     body.classList.remove("dark");
-}
-let boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s=>s.title == "BoostrapDark")[0];
-boostrapDarkStylesheet.disabled = localStorage.dark != "TRUE";
+  }
+  let boostrapDarkStylesheet = [].slice.call(document.styleSheets).filter(s => s.title == "BoostrapDark")[0];
+  boostrapDarkStylesheet.disabled = localStorage.dark != "TRUE";
 });
