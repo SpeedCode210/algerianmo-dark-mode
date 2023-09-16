@@ -4,10 +4,39 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     2.1.6
+// @version     2.1.7
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
+
+//fixing a bug on not colored submissions
+  let changeBg = (indicies, color1, color2) => {
+      for(let index of indicies) {
+        card = document.getElementById(index);
+        if(card != null){
+          card.getElementsByClassName('card-header')[0].style.backgroundColor = color1;
+          card.getElementsByClassName('card-body')[0].style.backgroundColor = color2;
+          card.id += 'c';
+        }
+      }
+  }
+
+
+const regex = /changeBg\(.+\)/gm;
+let text = document.body.parentElement.innerHTML;
+let m;
+
+while ((m = regex.exec(text)) !== null) {
+    // This is necessary to avoid infinite loops with zero-width matches
+    if (m.index === regex.lastIndex) {
+        regex.lastIndex++;
+    }
+
+    // The result can be accessed through the `m`-variable.
+    m.forEach((match, groupIndex) => {
+        eval(match.toString());
+    });
+}
 
 
 //fixing a bug on unremovable drafts
