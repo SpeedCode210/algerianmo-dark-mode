@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     2.1.7
+// @version     2.2
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -187,6 +187,13 @@ tr:first-child td:first-child { border-bottom-right-radius: 10px; }
 </style>
 <!-- MathJax-->
 `;
+
+for(let frame of document.getElementsByTagName("iframe")){
+    if(frame.src.includes("pdf")){
+        frame.src = "https://docs.google.com/gview?url="+ encodeURIComponent(frame.src) +"&embedded=true";
+    }
+}
+
 
 document.getElementsByTagName("nav")[0].classList.add("green-nav");
 
