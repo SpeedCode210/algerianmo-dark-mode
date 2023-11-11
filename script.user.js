@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     2.2
+// @version     2.3
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -51,6 +51,17 @@ if (window.location.href.includes("sub=0")) {
 document.getElementsByTagName('head')[0].innerHTML = document.getElementsByTagName('head')[0].innerHTML + `
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/bootstrap-dark.min.css" title="BoostrapDark"/>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400&display=swap');
+* {font-family: 'Vazirmatn', sans-serif;}
+</style>
+<style>
+
+.navbar{
+    margin: 0px auto 7px auto;
+    border-radius: 0px 0px 10px 10px;
+    width: fit-content;
+    box-shadow: #00000099 0px 0px 15px;
+}
 
 body{
 padding-bottom: 150px;
@@ -148,10 +159,10 @@ filter: invert() contrast(2.5);
 }
 
 .green-nav{
-  background-color:#22773A!important;
+  background-color:${ran_col()}!important;
 }
 .dark .green-nav{
-  background-color:#03360f !important;
+  background-color:${ran_col()} !important;
 }
 
 .card{border:0px;  background-color: #0001;  box-shadow: 5px 5px 10px #0006;border-radius: 50px 50px 50px 50px;}
@@ -187,6 +198,14 @@ tr:first-child td:first-child { border-bottom-right-radius: 10px; }
 </style>
 <!-- MathJax-->
 `;
+
+function ran_col() { //function name
+                var color = '#'; // hexadecimal starting symbol
+                var letters = ['8a6d1d','201661','6174b9','661641','137275','0f6643','33660f','66250f']; //Set your colors here
+                color += letters[Math.floor(Math.random() * letters.length)];
+                return color; // Setting the random color on your div element.
+}
+
 
 for(let frame of document.getElementsByTagName("iframe")){
     if(frame.src.includes("pdf")){
