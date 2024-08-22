@@ -4,7 +4,7 @@
 // @include     *algerianmo.com/*
 // @downloadURL https://github.com/SpeedCode210/algerianmo-dark-mode/raw/main/script.user.js
 // @icon http://www.algerianmo.com/static/images/favicon.ico
-// @version     2.3
+// @version     2.4
 // @author      Raouf Ould Ali / SpeedCode#0050
 // @description 1/25/2023, 5:34:04 PM
 // ==/UserScript==
@@ -165,23 +165,23 @@ filter: invert() contrast(2.5);
   background-color:${ran_col()} !important;
 }
 
-.card{border:0px;  background-color: #0001;  box-shadow: 5px 5px 10px #0006;border-radius: 50px 50px 50px 50px;}
+.card{border:0px;  background-color: #0001;  box-shadow: 5px 5px 10px #0006;border-radius: 30px 30px 30px 30px;}
 .dark .card{border:0px!important;  background-color: #fff1;  box-shadow: 5px 5px 10px #0006;}
 .card-header{border: 0px;!important;}
 
-.head-green  { background-color : #22773A !important; border-radius: 50px 50px 0px 0px !important;}
-.body-green  { background-color : #03360f !important; border: solid 15px #22773A; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
-.head-red    { background-color : #f50707 !important; border-radius: 50px 50px 0px 0px !important;}
-.body-red    { background-color : #611414 !important; border: solid 15px #832929; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
+.head-green  { background-color : #22773A !important; border-radius: 30px 30px 0px 0px !important;}
+.body-green  { background-color : #03360f !important; border: solid 15px #22773A; border-radius: 0px 0px 30px 30px; box-shadow: inset 5px 5px 10px #0006; }
+.head-red    { background-color : #f50707 !important; border-radius: 30px 30px 0px 0px !important;}
+.body-red    { background-color : #611414 !important; border: solid 15px #832929; border-radius: 0px 0px 30px 30px; box-shadow: inset 5px 5px 10px #0006; }
 
 .dark .unknown     { background-color : rgb(12 12 12) !important; }
 
-.head-black  { background-color : #1E7077 !important; border-radius: 50px 50px 0px 0px !important;}
-.body-black  { background-color : #17494E !important; border: solid 15px #1E7077; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
-.head-yellow { background-color : #cc991d !important; border-radius: 50px 50px 0px 0px !important;}
-.body-yellow { background-color : #8a5506 !important; border: solid 15px #cc991d; border-radius: 0px 0px 50px 50px; box-shadow: inset 5px 5px 10px #0006; }
+.head-black  { background-color : #1E7077 !important; border-radius: 30px 30px 0px 0px !important;}
+.body-black  { background-color : #17494E !important; border: solid 15px #1E7077; border-radius: 0px 0px 30px 30px; box-shadow: inset 5px 5px 10px #0006; }
+.head-yellow { background-color : #cc991d !important; border-radius: 30px 30px 0px 0px !important;}
+.body-yellow { background-color : #8a5506 !important; border: solid 15px #cc991d; border-radius: 0px 0px 30px 30px; box-shadow: inset 5px 5px 10px #0006; }
 
-img{border-radius: 50px;}
+img{border-radius: 25px;}
 tr:last-child td:last-child { border-top-left-radius: 10px; }
 tr:last-child td:first-child { border-top-right-radius: 10px; }
 
@@ -206,13 +206,13 @@ function ran_col() { //function name
                 return color; // Setting the random color on your div element.
 }
 
-
+/*
 for(let frame of document.getElementsByTagName("iframe")){
     if(frame.src.includes("pdf")){
         frame.src = "https://docs.google.com/gview?url="+ encodeURIComponent(frame.src) +"&embedded=true";
     }
 }
-
+*/
 
 document.getElementsByTagName("nav")[0].classList.add("green-nav");
 
